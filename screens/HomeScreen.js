@@ -1,13 +1,19 @@
 import React from "react";
-import { Text, SafeAreaView, StyleSheet } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import LogoHeader from "../components/LogoHeader";
 import CustomHeaderButton from "../components/CustomHeaderButton";
+import VideoItem from "../components/VideoItem";
+import { DATA } from "../data/dummy-data";
+
+const renderVideoItem = (item, index) => {
+  return <VideoItem video={item.item} />;
+};
 
 const HomeScreen = props => {
   return (
     <SafeAreaView style={styles.screen}>
-      <Text>Home</Text>
+      <FlatList data={DATA} renderItem={renderVideoItem} />
     </SafeAreaView>
   );
 };
