@@ -2,6 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
+import { createStackNavigator } from "react-navigation-stack";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import SubscriptionsScreen from "../screens/SubscriptionsScreen";
@@ -20,9 +21,13 @@ const tabIcon = (iconName, tabInfo) => {
     />
   );
 };
+
+const HomeNavigator = createStackNavigator({
+  Home: HomeScreen
+});
 const routeConfig = {
   Home: {
-    screen: HomeScreen,
+    screen: HomeNavigator,
     navigationOptions: {
       title: "Home",
       tabBarIcon: tabInfo => tabIcon("home", tabInfo)
@@ -62,12 +67,12 @@ const AppNavigator =
   Platform.OS === "ios"
     ? createBottomTabNavigator(routeConfig, {
         tabBarOptions: {
-          activeTintColor: Colors.primary
+          activeTintColor: Colors.accent
         }
       })
     : createMaterialBottomTabNavigator(routeConfig, {
         shifting: false,
-        activeColor: Colors.primary,
+        activeColor: Colors.accent,
         barStyle: {
           backgroundColor: "white"
         }
