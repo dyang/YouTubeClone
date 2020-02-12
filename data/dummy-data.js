@@ -8,7 +8,8 @@ export const DATA = [
     "TED",
     "https://yt3.ggpht.com/a/AGF-l7999BXZRpa6UpKd3C_9c2X_XB2q7VWGWJSRdw=s288-c-k-c0xffffffff-no-rj-mo",
     "44K",
-    "1 years ago"
+    "1 years ago",
+    "12:14"
   ),
   new Video(
     "2",
@@ -17,7 +18,8 @@ export const DATA = [
     "National Geographic",
     "https://yt3.ggpht.com/a/AGF-l78ClAIOg5dLvXHvZCSd5yozNIJGtdOTQirCMQ=s288-c-k-c0xffffffff-no-rj-mo",
     "160K",
-    "2 years ago"
+    "2 years ago",
+    "2:54"
   ),
   new Video(
     "3",
@@ -26,7 +28,8 @@ export const DATA = [
     "V101 Science",
     "https://yt3.ggpht.com/a/AGF-l7-Qt8rPjOK4Z3AHhaULXnbOBKpTL47x-uhEtg=s176-c-k-c0xffffffff-no-rj-mo",
     "332K",
-    "1 week ago"
+    "1 week ago",
+    "7:49"
   ),
   new Video(
     "4",
@@ -35,7 +38,8 @@ export const DATA = [
     "Maz2bi",
     "https://yt3.ggpht.com/a/AGF-l7_QPOqvSw42AFTvvG5XHMcLhzDP-lwNzdVKEg=s288-c-k-c0xffffffff-no-rj-mo",
     "2.1M",
-    "4 years ago"
+    "4 years ago",
+    "16:17"
   ),
   new Video(
     "5",
@@ -44,6 +48,7 @@ export const DATA = [
     "ToolArchive",
     "https://yt3.ggpht.com/a/AGF-l78u0MllFHj1rX2cGnLprQrYhD8OmE0uaTjsdw=s288-c-k-c0xffffffff-no-rj-mo",
     "2.7M",
-    "3 years ago"
-  ),
+    "3 years ago",
+    "1:35:37"
+  )
 ];

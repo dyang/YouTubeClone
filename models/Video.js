@@ -6,7 +6,8 @@ class Video {
     author,
     authorImageUrl,
     numberOfViews,
-    createdAt
+    createdAt,
+    duration
   ) {
     this.id = id;
     this.title = title;
@@ -15,6 +16,7 @@ class Video {
     this.authorImageUrl = authorImageUrl;
     this.numberOfViews = numberOfViews;
     this.createdAt = createdAt;
+    this.duration = duration;
   }
 }
 

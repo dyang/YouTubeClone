@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, ImageBackground, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 import Colors from "../constants/Colors";
 
@@ -13,10 +13,12 @@ const VideoItem = props => {
   return (
     <View style={styles.videoContainer}>
       <View style={styles.thumbnailContainer}>
-        <Image
+        <ImageBackground
           source={{ uri: props.video.thumbnailUrl }}
           style={styles.thumbnail}
-        />
+        >
+            <Text style={styles.duration} numberOfLines={1}>{props.video.duration}</Text>
+        </ImageBackground>
       </View>
       <View style={styles.detailsContainer}>
         <View style={styles.leftContainer}>
@@ -58,7 +60,19 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
     width: "100%",
-    height: "100%"
+    height: "100%",
+    alignItems: "flex-end",
+    justifyContent: 'flex-end'
+  },
+  duration: {
+    color: "white",
+    backgroundColor: "rgba(0,0,0,0.9)",
+    fontSize: 14,
+    textAlign: "center",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginRight: 10,
+    marginBottom: 10
   },
   detailsContainer: {
     flexDirection: "row",
