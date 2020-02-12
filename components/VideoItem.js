@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
   detailsContainer: {
     flexDirection: "row",
     width: "100%",
-    padding: 10
+    padding: 10,
+    marginBottom: 10
   },
   leftContainer: {
     width: 40,
