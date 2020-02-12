@@ -1,4 +1,5 @@
 import React from "react";
+import { Platform } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
@@ -56,9 +57,19 @@ const routeConfig = {
     }
   }
 };
-const AppNavigator = createBottomTabNavigator(routeConfig, {
-  tabBarOptions: {
-    activeTintColor: Colors.primary
-  }
-});
+
+const AppNavigator =
+  Platform.OS === "ios"
+    ? createBottomTabNavigator(routeConfig, {
+        tabBarOptions: {
+          activeTintColor: Colors.primary
+        }
+      })
+    : createMaterialBottomTabNavigator(routeConfig, {
+        shifting: false,
+        activeColor: Colors.primary,
+        barStyle: {
+          backgroundColor: "white"
+        }
+      });
 export default createAppContainer(AppNavigator);
