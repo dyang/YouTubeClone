@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, ImageBackground, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 import Colors from "../constants/Colors";
+import Touchable from "../components/Touchable";
 
 const subtitle = video => {
   return (
@@ -12,14 +13,18 @@ const subtitle = video => {
 const VideoItem = props => {
   return (
     <View style={styles.videoContainer}>
-      <View style={styles.thumbnailContainer}>
-        <ImageBackground
-          source={{ uri: props.video.thumbnailUrl }}
-          style={styles.thumbnail}
-        >
-            <Text style={styles.duration} numberOfLines={1}>{props.video.duration}</Text>
-        </ImageBackground>
-      </View>
+      <Touchable onPress={props.onPress.bind(this, props.video)}>
+        <View style={styles.thumbnailContainer}>
+          <ImageBackground
+            source={{ uri: props.video.thumbnailUrl }}
+            style={styles.thumbnail}
+          >
+            <Text style={styles.duration} numberOfLines={1}>
+              {props.video.duration}
+            </Text>
+          </ImageBackground>
+        </View>
+      </Touchable>
       <View style={styles.detailsContainer}>
         <View style={styles.leftContainer}>
           <Image
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "flex-end",
-    justifyContent: 'flex-end'
+    justifyContent: "flex-end"
   },
   duration: {
     color: "white",

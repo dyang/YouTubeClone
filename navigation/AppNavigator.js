@@ -9,6 +9,7 @@ import SubscriptionsScreen from "../screens/SubscriptionsScreen";
 import InboxScreen from "../screens/InboxScreen";
 import LibraryScreen from "../screens/LibraryScreen";
 import TrendingScreen from "../screens/TrendingScreen";
+import VideoScreen from "../screens/VideoScreen";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 import Colors from "../constants/Colors";
 
@@ -22,9 +23,21 @@ const tabIcon = (iconName, tabInfo) => {
   );
 };
 
-const HomeNavigator = createStackNavigator({
-  Home: HomeScreen
-});
+const HomeNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Video: VideoScreen
+  },
+  {
+    mode: "modal",
+    navigationOptions: ({ navigation }) => {
+      return {
+        tabBarVisible: navigation.state.index <= 0
+      };
+    }
+  }
+);
+
 const routeConfig = {
   Home: {
     screen: HomeNavigator,
